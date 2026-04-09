@@ -1,4 +1,4 @@
-package com.mirza.stockpricetracker.ui.theme
+package com.mirza.stockpricetracker.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
 
