@@ -41,8 +41,8 @@ internal val DarkBoardColors = BoardColorScheme(
 )
 
 internal val LightBoardColors = BoardColorScheme(
-    primaryBackground = Color(0xFFFFFFFF),
-    screenBackground = Color(0xFFFFFFFF),
+    primaryBackground = EggWhite,
+    screenBackground = EggWhite,
     positive = Color(0xFF2E7D32),
     negative = Color(0xFFC62828),
     neutral = Color(0xFF757575),
@@ -53,7 +53,7 @@ internal val LightBoardColors = BoardColorScheme(
     sessionDisconnected = Color(0xFFC62828),
     sessionConnecting = Color(0xFFE65100),
     sessionError = Color(0xFFB71C1C),
-    divider = Color(0xFFE5E5E5),
+    divider = Color(0xFFE6E2DB),
     headerActionFill = Color(0xFF1E88E5),
     headerActionContent = Color(0xFFFFFFFF)
 )

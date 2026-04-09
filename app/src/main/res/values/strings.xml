@@ -1,17 +1,20 @@
 <resources>
     <string name="app_name">Stock Price Tracker</string>
 
-    <string name="live_quotes_title">Live market board</string>
-    <string name="action_begin_stream">Begin</string>
-    <string name="action_end_stream">End</string>
+    <string name="live_quotes_title">Live quotes</string>
+    <string name="action_begin_stream">Start stream</string>
+    <string name="action_end_stream">Stop stream</string>
     <string name="session_status_live">Live stream</string>
     <string name="session_status_connecting">Connecting…</string>
     <string name="session_status_idle">Idle</string>
-    <string name="empty_state_disconnected">Tap Begin to start the simulated quote stream.</string>
-    <string name="empty_state_connecting">Connecting to the simulated feed…</string>
-    <string name="empty_state_waiting">Waiting for the next quote update…</string>
+    <string name="empty_state_headline_disconnected">Ready when you are</string>
+    <string name="empty_state_detail_disconnected">Start the stream to load simulated quotes. Prices refresh while the stream is running.</string>
+    <string name="empty_state_headline_connecting">Connecting</string>
+    <string name="empty_state_detail_connecting">Setting up the simulated feed…</string>
+    <string name="empty_state_headline_waiting">Stream is live</string>
+    <string name="empty_state_detail_waiting">Quotes appear here as soon as updates arrive.</string>
+    <string name="loading_stream_start">Starting stream…</string>
     <string name="live_quotes_notify_stream_ready">Stream is live</string>
     <string name="live_quotes_notify_stream_failed">Something went wrong. Try again.</string>
     <string name="live_quotes_notify_stream_stopped">Stream stopped</string>
-    <string name="cd_toggle_theme">Toggle light or dark theme</string>
 </resources>

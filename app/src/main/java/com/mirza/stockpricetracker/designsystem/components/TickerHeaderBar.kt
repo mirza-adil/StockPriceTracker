@@ -4,20 +4,19 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.DarkMode
-import androidx.compose.material.icons.filled.LightMode
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Stop
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -40,49 +39,29 @@ fun TickerHeaderBar(
     session: SessionLinkState,
     isBeginEnabled: Boolean,
     isEndEnabled: Boolean,
-    isDarkTheme: Boolean,
     onBeginClick: () -> Unit,
     onEndClick: () -> Unit,
-    onThemeToggle: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     val colors = boardColorScheme()
     Column(
         modifier = modifier
             .fillMaxWidth()
+            .statusBarsPadding()
             .background(colors.screenBackground)
             .padding(
                 horizontal = BoardSpacing.medium,
                 vertical = BoardSpacing.mediumSmall
             )
     ) {
-        Row(
-            modifier = Modifier.fillMaxWidth(),
-            verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.SpaceBetween
-        ) {
-            Column(modifier = Modifier.weight(1f)) {
-                Text(
-                    text = title,
-                    style = BoardTypography.headerTitle,
-                    color = colors.textPrimary,
-                    maxLines = 2
-                )
-                SessionStatusRow(session = session)
-            }
-            val themeLabel = stringResource(R.string.cd_toggle_theme)
-            IconButton(
-                onClick = onThemeToggle,
-                modifier = Modifier
-                    .size(48.dp)
-                    .semantics { contentDescription = themeLabel }
-            ) {
-                Icon(
-                    imageVector = if (isDarkTheme) Icons.Filled.LightMode else Icons.Filled.DarkMode,
-                    contentDescription = null,
-                    tint = colors.textPrimary
-                )
-            }
+        Column(modifier = Modifier.fillMaxWidth()) {
+            Text(
+                text = title,
+                style = BoardTypography.headerTitle,
+                color = colors.textPrimary,
+                maxLines = 2
+            )
+            SessionStatusRow(session = session)
         }
         Row(
             modifier = Modifier
@@ -98,6 +77,10 @@ fun TickerHeaderBar(
                 modifier = Modifier
                     .weight(1f)
                     .semantics { contentDescription = beginLabel },
+                contentPadding = PaddingValues(
+                    horizontal = BoardSpacing.medium,
+                    vertical = BoardSpacing.mediumSmall
+                ),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = colors.headerActionFill,
                     contentColor = colors.headerActionContent,
@@ -119,6 +102,10 @@ fun TickerHeaderBar(
                 modifier = Modifier
                     .weight(1f)
                     .semantics { contentDescription = endLabel },
+                contentPadding = PaddingValues(
+                    horizontal = BoardSpacing.medium,
+                    vertical = BoardSpacing.mediumSmall
+                ),
                 colors = ButtonDefaults.buttonColors(
                     containerColor = colors.negative.copy(alpha = 0.85f),
                     contentColor = Color.White,

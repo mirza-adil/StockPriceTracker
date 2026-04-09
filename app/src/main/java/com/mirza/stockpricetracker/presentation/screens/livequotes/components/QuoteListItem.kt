@@ -10,6 +10,8 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextOverflow
 import com.mirza.stockpricetracker.designsystem.components.DeltaBadge
 import com.mirza.stockpricetracker.designsystem.theme.BoardSpacing
@@ -24,7 +26,14 @@ fun QuoteListItem(
     showDivider: Boolean = true
 ) {
     val colors = boardColorScheme()
-    Column(modifier = modifier.fillMaxWidth()) {
+    val summary = "${row.symbol}, ${row.displayName}, ${row.priceText}, ${row.changeText} ${row.changePercentText}"
+    Column(
+        modifier = modifier
+            .fillMaxWidth()
+            .semantics(mergeDescendants = true) {
+                contentDescription = summary
+            }
+    ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()

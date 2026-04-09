@@ -41,6 +41,20 @@ object BoardTypography {
         lineHeight = 20.sp,
         letterSpacing = 0.25.sp
     )
+    val emptyStateTitle = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 18.sp,
+        lineHeight = 24.sp,
+        letterSpacing = 0.sp
+    )
+    val emptyStateBody = TextStyle(
+        fontFamily = FontFamily.Default,
+        fontWeight = FontWeight.Normal,
+        fontSize = 15.sp,
+        lineHeight = 22.sp,
+        letterSpacing = 0.15.sp
+    )
     val badge = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Medium,
