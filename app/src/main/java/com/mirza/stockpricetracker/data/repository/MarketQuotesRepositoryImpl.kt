@@ -21,7 +21,7 @@ import kotlinx.coroutines.channels.BufferOverflow
 import kotlinx.coroutines.sync.Mutex
 import kotlinx.coroutines.sync.withLock
 
-class MarketQuotesRepositoryImpl(
+class  MarketQuotesRepositoryImpl(
     private val dataSource: SimulatedQuoteStreamDataSource,
     private val appLogger: AppLogger,
     private val ioDispatcher: CoroutineDispatcher
