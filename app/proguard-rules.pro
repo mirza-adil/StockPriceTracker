@@ -1,21 +1,18 @@
-# Add project specific ProGuard rules here.
-# You can control the set of applied configuration files using the
-# proguardFiles setting in build.gradle.
-#
-# For more details, see
-#   http://developer.android.com/guide/developing/tools/proguard.html
+# Project-specific rules; release uses proguard-android-optimize.txt + this file.
 
-# If your project uses WebView with JS, uncomment the following
-# and specify the fully qualified class name to the JavaScript interface
-# class:
-#-keepclassmembers class fqcn.of.javascript.interface.for.webview {
-#   public *;
-#}
+# Better stack traces in Play Console / crash reporters after obfuscation
+-keepattributes SourceFile,LineNumberTable
+-renamesourcefileattribute SourceFile
 
-# Uncomment this to preserve the line number information for
-# debugging stack traces.
-#-keepattributes SourceFile,LineNumberTable
+# Kotlin
+-keep class kotlin.Metadata { *; }
+-dontwarn kotlin.reflect.jvm.internal.**
 
-# If you keep the line number information, uncomment this to
-# hide the original source file name.
-#-renamesourcefileattribute SourceFile
+# Koin (modules + definitions; runtime graph)
+-keep class org.koin.** { *; }
+-keepclassmembers class * {
+    @org.koin.core.annotation.* <methods>;
+}
+
+# Coroutines (optional warnings)
+-dontwarn kotlinx.coroutines.flow.**
