@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Stock Price Tracker</string>
 
-    <string name="live_quotes_title">Live quotes</string>
+    <string name="live_quotes_title">Real Time Price Tracker</string>
     <string name="action_begin_stream">Start stream</string>
     <string name="action_end_stream">Stop stream</string>
     <string name="session_status_live">Live stream</string>
@@ -17,4 +17,6 @@
     <string name="live_quotes_notify_stream_ready">Stream is live</string>
     <string name="live_quotes_notify_stream_failed">Something went wrong. Try again.</string>
     <string name="live_quotes_notify_stream_stopped">Stream stopped</string>
+    <string name="cd_toggle_theme">Switch to light theme</string>
+    <string name="cd_toggle_theme_dark">Switch to dark theme</string>
 </resources>

@@ -57,6 +57,8 @@ private enum class BoardContentPhase {
 
 @Composable
 fun LiveQuotesScreen(
+    isDarkTheme: Boolean,
+    onThemeToggle: () -> Unit,
     modifier: Modifier = Modifier,
     viewModel: LiveQuotesViewModel = koinViewModel()
 ) {
@@ -102,8 +104,10 @@ fun LiveQuotesScreen(
                 session = uiState.session,
                 isBeginEnabled = uiState.isBeginEnabled,
                 isEndEnabled = uiState.isEndEnabled,
+                isDarkTheme = isDarkTheme,
                 onBeginClick = { viewModel.handleIntent(LiveQuotesIntent.BeginStream) },
-                onEndClick = { viewModel.handleIntent(LiveQuotesIntent.EndStream) }
+                onEndClick = { viewModel.handleIntent(LiveQuotesIntent.EndStream) },
+                onThemeToggle = onThemeToggle
             )
         }
     ) { paddingValues ->

@@ -12,11 +12,14 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.DarkMode
+import androidx.compose.material.icons.filled.LightMode
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Stop
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -39,8 +42,10 @@ fun TickerHeaderBar(
     session: SessionLinkState,
     isBeginEnabled: Boolean,
     isEndEnabled: Boolean,
+    isDarkTheme: Boolean,
     onBeginClick: () -> Unit,
     onEndClick: () -> Unit,
+    onThemeToggle: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     val colors = boardColorScheme()
@@ -54,14 +59,37 @@ fun TickerHeaderBar(
                 vertical = BoardSpacing.mediumSmall
             )
     ) {
-        Column(modifier = Modifier.fillMaxWidth()) {
-            Text(
-                text = title,
-                style = BoardTypography.headerTitle,
-                color = colors.textPrimary,
-                maxLines = 2
-            )
-            SessionStatusRow(session = session)
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Column(modifier = Modifier.weight(1f)) {
+                Text(
+                    text = title,
+                    style = BoardTypography.headerTitle,
+                    color = colors.textPrimary,
+                    maxLines = 2
+                )
+                SessionStatusRow(session = session)
+            }
+            val themeLabel = if (isDarkTheme) {
+                stringResource(R.string.cd_toggle_theme)
+            } else {
+                stringResource(R.string.cd_toggle_theme_dark)
+            }
+            IconButton(
+                onClick = onThemeToggle,
+                modifier = Modifier
+                    .size(48.dp)
+                    .semantics { contentDescription = themeLabel }
+            ) {
+                Icon(
+                    imageVector = if (isDarkTheme) Icons.Filled.LightMode else Icons.Filled.DarkMode,
+                    contentDescription = null,
+                    tint = colors.textPrimary
+                )
+            }
         }
         Row(
             modifier = Modifier
