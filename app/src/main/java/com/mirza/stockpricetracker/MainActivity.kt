@@ -8,8 +8,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.mirza.stockpricetracker.data.preferences.ThemePreferenceStore
 import com.mirza.stockpricetracker.designsystem.theme.StockPriceTrackerTheme
@@ -45,13 +49,23 @@ class MainActivity : AppCompatActivity() {
         setContent {
             val scope = rememberCoroutineScope()
             uiModeGeneration.intValue
-            val isDarkTheme = isSystemInDarkTheme()
+            val systemIsDark = isSystemInDarkTheme()
+            var isDarkTheme by rememberSaveable { mutableIntStateOf(if (systemIsDark) 1 else 0) }
 
-            StockPriceTrackerTheme(darkTheme = isDarkTheme) {
+            LaunchedEffect(systemIsDark) {
+                isDarkTheme = if (systemIsDark) 1 else 0
+            }
+
+            StockPriceTrackerTheme(darkTheme = isDarkTheme == 1) {
                 LiveQuotesScreen(
-                    isDarkTheme = isDarkTheme,
+                    isDarkTheme = isDarkTheme == 1,
                     onThemeToggle = {
-                        val next = !isDarkTheme
+                        val next = when (AppCompatDelegate.getDefaultNightMode()) {
+                            AppCompatDelegate.MODE_NIGHT_YES -> false
+                            AppCompatDelegate.MODE_NIGHT_NO -> true
+                            else -> isDarkTheme != 1
+                        }
+                        isDarkTheme = if (next) 1 else 0
                         AppCompatDelegate.setDefaultNightMode(
                             if (next) {
                                 AppCompatDelegate.MODE_NIGHT_YES

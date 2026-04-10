@@ -19,4 +19,6 @@
     <string name="live_quotes_notify_stream_stopped">Stream stopped</string>
     <string name="cd_toggle_theme">Switch to light theme</string>
     <string name="cd_toggle_theme_dark">Switch to dark theme</string>
+    <string name="theme_mode_day">Day</string>
+    <string name="theme_mode_night">Night</string>
 </resources>

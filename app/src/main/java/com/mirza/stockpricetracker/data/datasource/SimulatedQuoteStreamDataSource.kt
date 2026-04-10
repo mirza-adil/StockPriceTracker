@@ -11,6 +11,11 @@ class SimulatedQuoteStreamDataSource {
     private val random = Random.Default
     private val snapshots = mutableListOf(
         QuoteSnapshot("AAPL", "Apple Inc.", 178.42),
+        QuoteSnapshot("EMIRATESNBD", "Emirates NBD.", 198.13),
+        QuoteSnapshot("DIB", "Dubai Islamic Bank.", 111.11),
+        QuoteSnapshot("FAB", "First Abu Dhabi Bank.", 123.00),
+        QuoteSnapshot("ADCB", "Abu Dhabi Commercial Bank.", 144.55),
+        QuoteSnapshot("ADIB", "Abu Dhabi Islamic Bank.", 212.22),
         QuoteSnapshot("YAP", "YAP Inc.", 189.30),
         QuoteSnapshot("KLIP", "KLIP Inc.", 152.31),
         QuoteSnapshot("MSFT", "Microsoft Corp.", 378.91),

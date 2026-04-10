@@ -12,14 +12,11 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.DarkMode
-import androidx.compose.material.icons.filled.LightMode
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Stop
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -78,17 +75,25 @@ fun TickerHeaderBar(
             } else {
                 stringResource(R.string.cd_toggle_theme_dark)
             }
-            IconButton(
+            val themeModeLabel = if (isDarkTheme) {
+                stringResource(R.string.theme_mode_day)
+            } else {
+                stringResource(R.string.theme_mode_night)
+            }
+            Button(
                 onClick = onThemeToggle,
                 modifier = Modifier
-                    .size(48.dp)
-                    .semantics { contentDescription = themeLabel }
-            ) {
-                Icon(
-                    imageVector = if (isDarkTheme) Icons.Filled.LightMode else Icons.Filled.DarkMode,
-                    contentDescription = null,
-                    tint = colors.textPrimary
+                    .semantics { contentDescription = themeLabel },
+                contentPadding = PaddingValues(
+                    horizontal = BoardSpacing.mediumSmall,
+                    vertical = BoardSpacing.extraSmall
+                ),
+                colors = ButtonDefaults.buttonColors(
+                    containerColor = colors.divider.copy(alpha = 0.55f),
+                    contentColor = colors.textPrimary
                 )
+            ) {
+                Text(text = themeModeLabel)
             }
         }
         Row(
