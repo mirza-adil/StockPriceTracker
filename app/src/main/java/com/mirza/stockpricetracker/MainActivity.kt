@@ -7,17 +7,15 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Modifier
 import com.mirza.stockpricetracker.data.preferences.ThemePreferenceStore
 import com.mirza.stockpricetracker.designsystem.theme.StockPriceTrackerTheme
-import com.mirza.stockpricetracker.presentation.screens.livequotes.LiveQuotesScreen
+import com.mirza.stockpricetracker.presentation.navigation.AppNavHost
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
@@ -57,7 +55,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             StockPriceTrackerTheme(darkTheme = isDarkTheme == 1) {
-                LiveQuotesScreen(
+                AppNavHost(
                     isDarkTheme = isDarkTheme == 1,
                     onThemeToggle = {
                         val next = when (AppCompatDelegate.getDefaultNightMode()) {
@@ -76,8 +74,7 @@ class MainActivity : AppCompatActivity() {
                         scope.launch {
                             themeStore.setUserDarkTheme(next)
                         }
-                    },
-                    modifier = Modifier.fillMaxSize()
+                    }
                 )
             }
         }
