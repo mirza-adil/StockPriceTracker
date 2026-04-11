@@ -46,6 +46,35 @@
 
 ---
 
+
+## 🎬 Demo
+| <img src="demo/Screenshot_20260411_233955.png" alt="Main" width="200" height="400"/> | <img src="demo/Screenshot_20260411_234010.png" alt="light theme" width="200" height="400"/> | 
+  <img src="demo/Screenshot_20260411_234024.png" alt="Dark theme" width="200" height="400"/> |
+
+### 📱 Application Walkthrough
+[![Walkthrough](https://img.youtube.com/vi/n9DmYuG6pdo/0.jpg)](https://www.youtube.com/shorts/n9DmYuG6pdo)
+
+### 🧪 deeplink test 
+
+<a href="https://www.youtube.com/watch?v=XA99lmzl0Fg">
+  <img src="https://img.youtube.com/vi/XA99lmzl0Fg/maxresdefault.jpg" width="100%"/>
+</a>
+
+### 🧪 Unit test run
+
+<a href="https://www.youtube.com/watch?v=NM6QNS3W4kc">
+  <img src="https://img.youtube.com/vi/NM6QNS3W4kc/maxresdefault.jpg" width="100%"/>
+</a>
+
+### 🖥️ Jetpack Compose UI tests
+
+<a href="https://www.youtube.com/watch?v=lTfsnRHqJhE">
+  <img src="https://img.youtube.com/vi/lTfsnRHqJhE/maxresdefault.jpg" width="100%"/>
+</a>
+
+## 🏗️ Architecture — MVI (Model-View-Intent)
+
+This project follows the **MVI (Model-View-Intent)** pattern, layered on top of **Clean Architecture** with strict separation of concerns across three layers.
 ## 📦 Libraries & Dependencies
 
 All versions are centrally managed via `gradle/libs.versions.toml` (Gradle Version Catalog).
@@ -125,48 +154,6 @@ All versions are centrally managed via `gradle/libs.versions.toml` (Gradle Versi
 | Compose UI Test Manifest | `androidx.compose.ui:ui-test-manifest` | Test activity manifest (debug) |
 
 ---
-
-## 🎬 Demo
-
-Screen recordings live in [`app/assets/`](app/assets/).
-
-### 📱 Application Walkthrough
-
-<<<<<<< HEAD
-```
-[▶️ Watch App Demo Video]
-
-<video src="https://github.com/mirza-adil/StockPriceTracker/blob/master/app/assets/Jetpack%20Compose%20UI%20test.mp4" controls width="600"/>
-```
-=======
-[▶️ Watch application walkthrough](app/assets/application-video.mp4)
->>>>>>> d3aaf10 (docs(readme): update project documentation)
-
-### 🔗 Deep links
-
-<<<<<<< HEAD
-<video src="https://raw.githubusercontent.com/mirza-adil/StockPriceTracker/master/app/assets/Jetpack%20Compose%20UI%20test.mp4" controls width="100%"></video>
-```
-[▶️ Watch Unit Test Run]
-unit_tests_demo.mp4 — Run via: ./gradlew test and record output
-```
-=======
-[▶️ Watch deep link demo](app/assets/deep-link.mp4)
->>>>>>> d3aaf10 (docs(readme): update project documentation)
-
-### 🧪 Unit test run
-
-[▶️ Watch unit test run](app/assets/Unit-test%20.mp4)
-
-### 🖥️ Jetpack Compose UI tests
-
-[▶️ Watch Compose UI test run](app/assets/Jetpack%20Compose%20UI%20test.mp4)
-
----
-
-## 🏗️ Architecture — MVI (Model-View-Intent)
-
-This project follows the **MVI (Model-View-Intent)** pattern, layered on top of **Clean Architecture** with strict separation of concerns across three layers.
 
 ```
 ┌─────────────────────────────────────────────────────────┐
