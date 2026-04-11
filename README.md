@@ -406,5 +406,5 @@ com.mirzaadil.stockpricetracker/
 
 **Mirza Adil** — Senior Android Engineer with 10+ years of experience building scalable, high-performance mobile applications across ride-hailing, e-commerce, and fintech domains.
 
-🔗 [GitHub](https://github.com/mirza-adil) [GitHub](https://github.com/mirzaadil)  &nbsp;|&nbsp; [LinkedIn](https://linkedin.com/in/mirza-adil)
+🔗 [GitHub](https://github.com/mirza-adil) [GitHub](https://github.com/mirzaadil)  &nbsp;|&nbsp; [LinkedIn](https://www.linkedin.com/in/mirzaadil/)
 
