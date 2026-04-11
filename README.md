@@ -128,31 +128,39 @@ All versions are centrally managed via `gradle/libs.versions.toml` (Gradle Versi
 
 ## 🎬 Demo
 
-### 📱 Application Walkthrough
-> *(Replace with your screen recording or GIF)*
+Screen recordings live in [`app/assets/`](app/assets/).
 
+### 📱 Application Walkthrough
+
+<<<<<<< HEAD
 ```
 [▶️ Watch App Demo Video]
 
 <video src="https://github.com/mirza-adil/StockPriceTracker/blob/master/app/assets/Jetpack%20Compose%20UI%20test.mp4" controls width="600"/>
 ```
+=======
+[▶️ Watch application walkthrough](app/assets/application-video.mp4)
+>>>>>>> d3aaf10 (docs(readme): update project documentation)
 
-### 🧪 Unit Test Run
-> *(Replace with your test execution recording)*
+### 🔗 Deep links
 
+<<<<<<< HEAD
 <video src="https://raw.githubusercontent.com/mirza-adil/StockPriceTracker/master/app/assets/Jetpack%20Compose%20UI%20test.mp4" controls width="100%"></video>
 ```
 [▶️ Watch Unit Test Run]
 unit_tests_demo.mp4 — Run via: ./gradlew test and record output
 ```
+=======
+[▶️ Watch deep link demo](app/assets/deep-link.mp4)
+>>>>>>> d3aaf10 (docs(readme): update project documentation)
 
-### 🖥️ Jetpack Compose UI Tests
-> *(Replace with your UI test recording)*
+### 🧪 Unit test run
 
-```
-[▶️ Watch Compose UI Test Run]
-compose_ui_tests_demo.mp4 — Run via: ./gradlew connectedAndroidTest
-```
+[▶️ Watch unit test run](app/assets/Unit-test%20.mp4)
+
+### 🖥️ Jetpack Compose UI tests
+
+[▶️ Watch Compose UI test run](app/assets/Jetpack%20Compose%20UI%20test.mp4)
 
 ---
 
