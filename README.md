@@ -133,7 +133,8 @@ All versions are centrally managed via `gradle/libs.versions.toml` (Gradle Versi
 
 ```
 [▶️ Watch App Demo Video]
-app_demo.mp4 — Add your video to the /media folder and embed here
+
+<video src="https://github.com/mirza-adil/StockPriceTracker/blob/master/app/assets/Jetpack%20Compose%20UI%20test.mp4" controls width="600"/>
 ```
 
 ### 🧪 Unit Test Run
