@@ -140,6 +140,7 @@ All versions are centrally managed via `gradle/libs.versions.toml` (Gradle Versi
 ### 🧪 Unit Test Run
 > *(Replace with your test execution recording)*
 
+<video src="https://raw.githubusercontent.com/mirza-adil/StockPriceTracker/master/app/assets/Jetpack%20Compose%20UI%20test.mp4" controls width="100%"></video>
 ```
 [▶️ Watch Unit Test Run]
 unit_tests_demo.mp4 — Run via: ./gradlew test and record output
