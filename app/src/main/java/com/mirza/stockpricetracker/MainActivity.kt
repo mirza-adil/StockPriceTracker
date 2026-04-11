@@ -7,9 +7,9 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
@@ -48,22 +48,19 @@ class MainActivity : AppCompatActivity() {
             val scope = rememberCoroutineScope()
             uiModeGeneration.intValue
             val systemIsDark = isSystemInDarkTheme()
-            var isDarkTheme by rememberSaveable { mutableIntStateOf(if (systemIsDark) 1 else 0) }
+            var userThemeOverride by rememberSaveable { mutableStateOf<Boolean?>(null) }
+            val isDarkTheme = userThemeOverride ?: systemIsDark
 
-            LaunchedEffect(systemIsDark) {
-                isDarkTheme = if (systemIsDark) 1 else 0
-            }
-
-            StockPriceTrackerTheme(darkTheme = isDarkTheme == 1) {
+            StockPriceTrackerTheme(darkTheme = isDarkTheme) {
                 AppNavHost(
-                    isDarkTheme = isDarkTheme == 1,
+                    isDarkTheme = isDarkTheme,
                     onThemeToggle = {
                         val next = when (AppCompatDelegate.getDefaultNightMode()) {
                             AppCompatDelegate.MODE_NIGHT_YES -> false
                             AppCompatDelegate.MODE_NIGHT_NO -> true
-                            else -> isDarkTheme != 1
+                            else -> !isDarkTheme
                         }
-                        isDarkTheme = if (next) 1 else 0
+                        userThemeOverride = next
                         AppCompatDelegate.setDefaultNightMode(
                             if (next) {
                                 AppCompatDelegate.MODE_NIGHT_YES

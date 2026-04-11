@@ -21,7 +21,7 @@ class SimulatedQuoteStreamDataSource {
         QuoteSnapshot("MSFT", "Microsoft Corp.", 378.91),
         QuoteSnapshot("GOOGL", "Alphabet Inc.", 141.80),
         QuoteSnapshot("AMZN", "Amazon.com Inc.", 178.25),
-        QuoteSnapshot("Multi Bank", "Multi Bank Corp.", 175.99),
+        QuoteSnapshot("MultiBank", "Multi Bank Corp.", 175.99),
         QuoteSnapshot("DMCC Dubai", "DMCC Corp.", 175.99),
         QuoteSnapshot("NOKIA", "NOKIA.com Inc.", 179.99),
         QuoteSnapshot("Binance", "Binance.com Inc.", 189.99),

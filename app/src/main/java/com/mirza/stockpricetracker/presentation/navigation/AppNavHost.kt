@@ -1,6 +1,7 @@
 package com.mirza.stockpricetracker.presentation.navigation
 
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
@@ -48,6 +49,11 @@ fun AppNavHost(
             )
         ) { backStackEntry ->
             val symbol = backStackEntry.arguments?.getString(AppRoutes.SYMBOL_ARG).orEmpty()
+            LaunchedEffect(symbol) {
+                if (symbol.isBlank()) {
+                    navController.popBackStack()
+                }
+            }
             StockDetailScreen(
                 symbol = symbol,
                 onBack = { navController.popBackStack() }
